@@ -4,12 +4,17 @@
 #
 
 [diff "xyzdiffer"]
-    command = ./differ.py  # Replace with full path to differ.py.
+    command = ./differ.py  # Can replace with full path to differ.py.
     # Custom file type for testing external git tools.
     # wordRegex = "\\\\[a-zA-Z]+|[{}]|\\\\.|[^\\{}[:space:]]+"
     # renames = true
 
 [merge "xyzmerger"]
-    driver = ./merger.py  %O %A %B %L %P # Replace with full path to merger.py.
+    # %O ancestor version, %A current, %B other branch, %L conflict marker size
+    # %P where the merged file will be stored.
+    # The merge driver is expected to leave the result of the merge in the file
+    # named with %A by overwriting it, and exit with zero status if it managed
+    # to merge them cleanly, or non-zero if there were conflicts.
+    driver = ./merger.py  %O %A %B %L %P # Can replace with full path to merger.py.
     trustExitCode = true
-    prompt = false
+    prompt = true
