@@ -18,7 +18,7 @@ if __name__ == '__main__':
     with open(sys.argv[3], 'r') as fd:
         file_other = fd.read().split('\n')
     merged_lines = list()
-    for lineno in xrange(max(len(file_ancestor), len(file_current), len(file_other))):
+    for lineno in xrange(max(len(file_ancestor), len(file_current), len(file_other)) - 1):
         print 'Select (1), (2) or (3):'
         print '(1)',
         print_nth_line(file_ancestor, lineno)
