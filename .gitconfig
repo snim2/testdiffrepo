@@ -3,14 +3,12 @@
 # git config --local include.path ../.gitconfig
 #
 
-[diff "xyz"]
+[diff "xyzdiffer"]
     command = ./differ.py  # Replace with full path to differ.py.
     # Custom file type for testing external git tools.
     # wordRegex = "\\\\[a-zA-Z]+|[{}]|\\\\.|[^\\{}[:space:]]+"
     # renames = true
 
-# [merge "filfre"]  # ERP!
-#         name = feel-free merge driver
-#         driver = filfre %O %A %B %L %P
-#         recursive = binary
+[merge "xyzmerger"]
+    driver = ./differ.py  %O %A %B %L %P # Replace with full path to differ.py.
 

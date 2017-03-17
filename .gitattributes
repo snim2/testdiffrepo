@@ -1,1 +1,2 @@
-*.xyz   diff=xyz
+*.xyz   diff=xyzdiffer
+*.xyz   merge=xyzmerger
