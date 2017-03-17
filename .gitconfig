@@ -10,5 +10,6 @@
     # renames = true
 
 [merge "xyzmerger"]
-    driver = ./differ.py  %O %A %B %L %P # Replace with full path to differ.py.
-
+    driver = ./merger.py  %O %A %B %L %P # Replace with full path to merger.py.
+    trustExitCode = true
+    prompt = false
